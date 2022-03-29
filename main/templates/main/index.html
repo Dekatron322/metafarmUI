@@ -1,0 +1,408 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="content content-fixed">
+      <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+        <div class="d-sm-flex align-items-center justify-content-between mg-b-20 mg-lg-b-30">
+          <div>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-style1 mg-b-10">
+                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: #fbbd18;">Cryptocurrency</li>
+              </ol>
+            </nav>
+            <h4 class="mg-b-0 tx-spacing--1">Welcome to the <span style="color:#fbbd18;">Metafarm</span></h4>
+          </div>
+          <div class="d-none d-md-flex">
+            <a href="/stake/stake/" class="btn btn-sm btn-warning btn-uppercase pd-x-20">Stake METIS</a>
+            <a href="/stake/stake/" class="btn btn-sm btn-white btn-uppercase pd-x-20 mg-l-5">Stake META FARM</a>
+            <a href="/stake/stake/" class="btn btn-sm btn-secondary btn-uppercase pd-x-20 mg-l-5">Stake NFT</a>
+            <a href="/stake/all-stake/" class="btn btn-sm btn-success btn-uppercase pd-x-20 mg-l-5">Show all</a>
+            <button class="btn btn-sm btn-icon btn-primary btn-uppercase mg-l-5"><i data-feather="more-vertical"></i></button>
+          </div>
+        </div>
+
+        <div class="row row-xs">
+          <div class="col-12">
+            <div class="card card-body">
+              <div class="d-md-flex align-items-center justify-content-between">
+                <div class="media align-sm-items-center">
+                  <div class="tx-40 tx-lg-60 lh-0 tx-orange"><i class="fa fa-wallet"></i></div>
+                  <div class="media-body mg-l-15">
+                    <h6 class="tx-12 tx-lg-14 tx-semibold tx-uppercase tx-spacing-1 mg-b-5">Wallet Balance <span class="tx-normal tx-color-03">(USDC)</span></h6>
+                    <div class="d-flex align-items-baseline">
+                      <h2 class="tx-20 tx-lg-28 tx-normal tx-rubik tx-spacing--2 lh-2 mg-b-0">$3,972.87</h2>
+                    </div>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                <div class="d-flex flex-column flex-sm-row mg-t-20 mg-md-t-0">
+                  <a href="#modalInvitePeople" data-toggle="modal" class="btn btn-sm btn-warning btn-uppercase pd-x-15"><i data-feather="clipboard" class="mg-r-5"></i> Receive</a>
+                  <a href="/wallet/send-1/" class="btn btn-sm btn-success btn-uppercase pd-x-15 mg-t-5 mg-sm-t-0 mg-sm-l-5"><i data-feather="send" class="mg-r-5"></i> Send</a>
+                  <button class="btn btn-sm btn-primary btn-uppercase pd-x-15 mg-t-5 mg-sm-t-0  mg-sm-l-5"><i data-feather="eye" class="mg-r-5"></i> Watch</button>
+                </div>
+              </div>
+            </div>
+          </div><!-- col -->
+          
+          <div class="col-12 mg-t-10">
+            <div class="card">
+              <div class="card-header">
+                <h6 class="mg-b-0">Cryptocurrency Watchlist</h6>
+              </div><!-- card-header -->
+              <div class="card-body pd-0">
+                <div class="row no-gutters">
+                  <div class="col col-sm-6 col-lg">
+                     {% for rs in data %}
+                    <div class="crypto">
+                     
+                      <div class="media mg-b-10">
+                        <div class="crypto-icon ">
+                          <img width="75%" src="https://pbs.twimg.com/profile_images/1463505543553818627/enZoCNIg_400x400.jpg">
+                        </div><!-- crypto-icon -->
+                        <div class="media-body pd-l-8">
+                          <h6 class="tx-11 tx-spacing-1 tx-uppercase tx-semibold mg-b-5">{{ rs.name }} <span class="tx-color-03 tx-normal">({{ rs.symbol }})</span></h6>
+                          <div class="d-flex align-items-baseline tx-rubik">
+                            <h5 class="tx-20 mg-b-0">${{ rs.current_price|floatformat:2 }}</h5>
+                            
+                          </div>
+                        </div><!-- media-body -->
+                      </div><!-- media -->
+                      
+                      <div class="chart-twelve">
+                        <div id="flotChart2" class="flot-chart"></div>
+                      </div><!-- chart-twelve -->
+
+                      <div class="pos-absolute b-5 l-20 tx-medium">
+                        <label class="tx-9 tx-uppercase tx-sans tx-color-03">
+                          <a href="" class="link-01 tx-semibold">{{ rs.market_cap_rank }}</a> Rank
+                        </label>
+                        <label class="tx-9 tx-uppercase tx-sans tx-color-03 mg-l-10">
+                          <a href="" class="link-01 tx-semibold">{{rs.market_cap}}</a> Market Cap
+                        </label>
+                      </div>
+                    </div><!-- crypto -->
+                    {% endfor %}
+                  </div>
+                  <div class="col col-sm-6 col-lg bd-t bd-sm-t-0 bd-sm-l" >
+                    <div class="crypto">
+                      <div class="media mg-b-10">
+                       <div class="crypto-icon bg-white">
+                          <img width="150%" src="https://metafarmcoin.io/static/images/METAFARMLOGO%20(1).png">
+                        </div>
+                        <div class="media-body pd-l-8">
+                          <h6 class="tx-11 tx-spacing-1 tx-uppercase tx-semibold mg-b-5">Meta Farm <span class="tx-color-03 tx-normal">(MetF)</span></h6>
+                          <div class="d-flex align-items-baseline tx-rubik">
+                            <h5 class="tx-20 mg-b-0">$xxxx</h5>
+                            
+                          </div>
+                        </div><!-- media-body -->
+                      </div><!-- media -->
+
+                      <div class="chart-twelve">
+                        <div id="flotChart3" class="flot-chart"></div>
+                      </div><!-- chart-twelve -->
+
+                      <div class="pos-absolute b-5 l-20 tx-medium">
+                        <label class="tx-9 tx-uppercase tx-sans tx-color-03">
+                          <a href="" class="link-01 tx-semibold">xxx</a> Rank
+                        </label>
+                        <label class="tx-9 tx-uppercase tx-sans tx-color-03 mg-l-10">
+                          <a href="" class="link-01 tx-semibold">xxx</a> Market Cap
+                        </label>
+                      </div>
+                    </div><!-- crypto -->
+                  </div>
+                  <div class="col col-sm-6 col-lg bd-t bd-lg-t-0 bd-lg-l">
+                    {% for rs in usd %}
+                    <div class="crypto">
+                      <div class="media mg-b-10">
+                        <div class="crypto-icon bg-litecoin">
+                          <img width="75%" src="{{ rs.image }}">
+                        </div><!-- crypto-icon -->
+                        <div class="media-body pd-l-8">
+                          <h6 class="tx-11 tx-spacing-1 tx-uppercase tx-semibold mg-b-5">{{ rs.name }} <span class="tx-color-03 tx-normal">({{rs.symbol}})</span></h6>
+                          <div class="d-flex align-items-baseline tx-rubik">
+                            <h5 class="tx-20 mg-b-0">${{ rs.current_price|floatformat:2 }}</h5>
+                            
+                          </div>
+                        </div><!-- media-body -->
+                      </div><!-- media -->
+
+                      <div class="chart-twelve">
+                        <div id="flotChart4" class="flot-chart"></div>
+                      </div><!-- chart-twelve -->
+
+                      <div class="pos-absolute b-5 l-20 tx-medium">
+                        <label class="tx-9 tx-uppercase tx-sans tx-color-03">
+                          <a href="" class="link-01 tx-semibold">{{ rs.market_cap_rank }}</a> Rank
+                        </label>
+                        <label class="tx-9 tx-uppercase tx-sans tx-color-03 mg-l-10">
+                          <a href="" class="link-01 tx-semibold">{{rs.market_cap}}</a> Market Cap
+                        </label>
+                      </div>
+                    </div><!-- crypto -->
+                    {% endfor %}
+                  </div>
+                  {% for rs in btc %}
+                  <div class="col col-sm-6 col-lg bd-t bd-lg-t-0 bd-sm-l">
+                    <div class="crypto">
+                      <div class="media mg-b-10">
+                        <div class="crypto-icon bg-warning">
+                          <i class="cf cf-btc"></i>
+                        </div><!-- crypto-icon -->
+                        <div class="media-body pd-l-8">
+                          <h6 class="tx-11 tx-spacing-1 tx-uppercase tx-semibold mg-b-5">BITCOIN <span class="tx-color-03 tx-normal">(BTC)</span></h6>
+                          <div class="d-flex align-items-baseline tx-rubik">
+                            <h5 class="tx-20 mg-b-0">${{ rs.current_price|floatformat:2 }}</h5>
+                           
+                          </div>
+                        </div><!-- media-body -->
+                      </div><!-- media -->
+
+                      <div class="chart-twelve">
+                        <div id="flotChart5" class="flot-chart"></div>
+                      </div><!-- chart-twelve -->
+
+                      <div class="pos-absolute b-5 l-20 tx-medium">
+                        <label class="tx-9 tx-uppercase tx-sans tx-color-03">
+                          <a href="" class="link-01 tx-semibold">{{ rs.market_cap_rank }}</a> Rank
+                        </label>
+                        <label class="tx-9 tx-uppercase tx-sans tx-color-03 mg-l-10">
+                          <a href="" class="link-01 tx-semibold">{{rs.market_cap}}</a> Market Cap
+                        </label>
+                      </div>
+                    </div><!-- crypto -->
+                  </div>
+                  {% endfor %}
+                </div><!-- row -->
+              </div><!-- card-body -->
+            </div><!-- card -->
+          </div><!-- col -->
+          
+          <div class="col-sm-6 col-lg-8 mg-t-10">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between">
+                <h6 class="lh-5 mg-b-0">Portfolio</h6>
+                <nav class="nav nav-row-xs align-items-center">
+                  <a href="" class="nav-link">1D</a>
+                  <a href="" class="nav-link active">1W</a>
+                  <a href="" class="nav-link">1M</a>
+                  <a href="" class="nav-link">1Y</a>
+                </nav>
+              </div><!-- card-header -->
+              <div class="card-body pd-0 pos-relative">
+                <div class="pos-absolute t-20 l-20">
+                  <p class="tx-uppercase tx-11 tx-spacing-1 tx-color-03 tx-medium mg-b-5">Available Balance</p>
+                <a href="" class="tx-26 tx-normal tx-rubik tx-spacing--2 mg-b-5">26.00 <small class="text-muted tx-light">METIS</small></a>
+                <div class="d-flex mg-b-25">
+                  <p class="tx-12 tx-rubik mg-b-0"><span class="tx-medium tx-success mg-r-5">USD</span> $103,342.50</p>
+                  
+                </div>
+                
+                  <a href="#modalInvitePeople" data-toggle="modal" class="btn btn-sm btn-warning btn-uppercase pd-x-15"><i data-feather="clipboard" class="mg-r-5"></i> Receive</a>
+                  <a href="/wallet/send-1/" class="btn btn-sm btn-success btn-uppercase pd-x-15 mg-t-5 mg-sm-t-0 mg-sm-l-5"><i data-feather="send" class="mg-r-5"></i> Send</a>
+                  <button class="btn btn-sm btn-primary btn-uppercase pd-x-15 mg-t-5 mg-sm-t-0  mg-sm-l-5"><i data-feather="eye" class="mg-r-5"></i> Watch</button>
+                
+                </div>
+                <div class="chart-fourteen">
+                  <div id="flotChart6" class="flot-chart"></div>
+                </div><!-- chart-fourteen -->
+                <ul class="list-group list-group-flush mg-t-15">
+                  <li class="list-group-item d-flex align-items-center">
+                    <div class="crypto-icon crypto-icon-sm bg-orange">
+                      <i class="cf cf-btc"></i>
+                    </div>
+
+                    <div class="mg-l-15">
+                      <h6 class="lh-5 mg-b-0">Bitcoin</h6>
+                      <span class="d-block tx-color-03 tx-uppercase tx-11 tx-medium">btc/usd</span>
+                    </div>
+                    <div class="mg-l-auto text-right">
+                      <p class="mg-b-0 tx-rubik">0.7200 BTC</p>
+                      <span class="d-block tx-color-03 tx-uppercase tx-11 tx-rubik">$2,907.71 USD</span>
+                    </div>
+                  </li>
+                  {% for rs in data %}
+                  <li class="list-group-item d-flex align-items-center">
+                    <div class="crypto-icon crypto-icon-sm">
+                     <img width="70%" src="https://pbs.twimg.com/profile_images/1463505543553818627/enZoCNIg_400x400.jpg">
+                    </div>
+                    <div class="mg-l-15">
+                      <h6 class="lh-5 mg-b-0">{{ rs.name }}</h6>
+                      <span class="d-block tx-color-03 tx-uppercase tx-11 tx-medium">{{rs.name}}/usd</span>
+                    </div>
+                    <div class="mg-l-auto text-right">
+                      <p class="mg-b-0 tx-rubik">15.0030 {{rs.name}}</p>
+                      <span class="d-block tx-color-03 tx-uppercase tx-11 tx-rubik">$2,083.62 USD</span>
+                    </div>
+                  </li>
+                  {% endfor %}
+                  {% for rs in usd %}
+                  <li class="list-group-item d-flex align-items-center">
+                    <div class="crypto-icon crypto-icon-sm bg-litecoin">
+                      <img width="75%" src="{{ rs.image}}">
+                    </div>
+                    <div class="mg-l-15">
+                      <h6 class="lh-5 mg-b-0">{{ rs.name }}</h6>
+                      <span class="d-block tx-color-03 tx-uppercase tx-11 tx-medium">{{ rs.symbol}}</span>
+                    </div>
+                    <div class="mg-l-auto text-right">
+                      <p class="mg-b-0 tx-rubik">12.5021 {{ rs.name }}</p>
+                      <span class="d-block tx-color-03 tx-uppercase tx-11 tx-rubik">$12.5021 USD</span>
+                    </div>
+                  </li>
+                  {% endfor %}
+                  <li class="list-group-item d-flex align-items-center">
+                    <div class="crypto-icon crypto-icon-sm bg-white">
+                      <img width="100%" src="https://metafarmcoin.io/static/images/METAFARMLOGO%20(1).png">
+                    </div>
+                    <div class="mg-l-15">
+                      <h6 class="lh-5 mg-b-0">MetaFarm</h6>
+                      <span class="d-block tx-color-03 tx-uppercase tx-11 tx-medium">metf/usd</span>
+                    </div>
+                    <div class="mg-l-auto text-right">
+                      <p class="mg-b-0 tx-rubik">5.8120 METF</p>
+                      <span class="d-block tx-color-03 tx-uppercase tx-11 tx-rubik">$916.67 USD</span>
+                    </div>
+                  </li>
+                  
+                </ul>
+              </div><!-- card-body -->
+            </div><!-- card -->
+          </div><!-- col -->
+          <div class="col-sm-6 col-lg-4 mg-t-10">
+            <div class="card ht-md-100p">
+              <div class="card-header d-flex justify-content-between">
+                <h6 class="lh-5 mg-b-0">Transactions</h6>
+                <a href="" class="tx-12 link-03">View All Transactions <i data-feather="arrow-right" class="wd-15 ht-15"></i></a>
+              </div><!-- card-header -->
+              <div class="card-body pd-0">
+                <ul class="list-unstyled mg-b-0">
+                  <li class="list-label">Today, Mar 20</li>
+                  <li class="list-item">
+                    <div class="media align-items-center">
+                      <div class="wd-35 ht-35 bd bd-2 bd-info tx-info rounded-circle align-items-center justify-content-center op-6 d-none d-sm-flex">
+                        <i data-feather="download" class="wd-20 ht-20"></i>
+                      </div>
+                      <div class="media-body mg-sm-l-15">
+                        <p class="tx-medium mg-b-0">Received Metis</p>
+                        <p class="tx-12 mg-b-0 tx-color-03">Received data 12/10/2022</p>
+                      </div><!-- media-body -->
+                    </div><!-- media -->
+                    <div class="text-right tx-rubik">
+                      <p class="mg-b-0">+0.0108 Metis</p>
+                      <p class="tx-12 mg-b-0 tx-success">+$25.00 USD</p>
+                    </div><!-- media-body -->
+                  </li>
+                  <li class="list-item">
+                    <div class="media align-items-center">
+                      <div class="wd-35 ht-35 bd bd-2 bd-primary tx-primary rounded-circle align-items-center justify-content-center op-6 d-none d-sm-flex">
+                        <i data-feather="upload" class="wd-20 ht-20"></i>
+                      </div>
+                      <div class="media-body mg-sm-l-15">
+                        <p class="tx-medium mg-b-0">Sent Metis</p>
+                        <p class="tx-12 mg-b-0 tx-color-03">To address 0x000..</p>
+                      </div><!-- media-body -->
+                    </div><!-- media -->
+                    <div class="text-right tx-rubik">
+                      <p class="tx-normal mg-b-2">-1.257 Metis</p>
+                      <p class="tx-12 mg-b-0 tx-danger">-$289.00 USD</p>
+                    </div><!-- media-body -->
+                  </li>
+                  <li class="list-label">Yesterday, Mar 19</li>
+                  <li class="list-item">
+                    <div class="media align-items-center">
+                      <div class="wd-35 ht-35 bd bd-2 bd-success tx-success rounded-circle align-items-center justify-content-center op-6 d-none d-sm-flex">
+                        <i data-feather="shopping-bag" class="wd-20 ht-20"></i>
+                      </div>
+                      <div class="media-body mg-sm-l-15">
+                        <p class="tx-medium mg-b-0">Received MetaFarm</p>
+                        <p class="tx-12 mg-b-0 tx-color-03">Receive Date 12/12/2022</p>
+                      </div><!-- media-body -->
+                    </div><!-- media -->
+                    <div class="text-right tx-rubik">
+                      <p class="mg-b-0">+2.0157 MetaFarm</p>
+                      <p class="tx-12 mg-b-0 tx-success">+$21.50 USD</p>
+                    </div>
+                  </li>
+                  <li class="list-item">
+                    <div class="media align-items-center">
+                      <div class="wd-35 ht-35 bd bd-2 bd-success tx-success rounded-circle align-items-center justify-content-center op-6 d-none d-sm-flex">
+                        <i data-feather="shopping-bag" class="wd-20 ht-20"></i>
+                      </div>
+                      <div class="media-body mg-sm-l-15">
+                        <p class="tx-medium mg-b-0">Sent MetaFarm</p>
+                        <p class="tx-12 mg-b-0 tx-color-03">Sent to 0x***11b</p>
+                      </div><!-- media-body -->
+                    </div><!-- media -->
+                    <div class="text-right tx-rubik">
+                      <p class="mg-b-0">+0.004 Meta farm</p>
+                      <p class="tx-12 mg-b-0 tx-success">-$0.50 USD</p>
+                    </div>
+                  </li>
+                  <li class="list-item">
+                    <div class="media align-items-center">
+                      <div class="wd-35 ht-35 bd bd-2 bd-primary tx-primary rounded-circle align-items-center justify-content-center op-6 d-none d-sm-flex">
+                        <i data-feather="upload" class="wd-20 ht-20"></i>
+                      </div>
+                      <div class="media-body mg-sm-l-15">
+                        <p class="tx-medium mg-b-0">Sent Bitcoin</p>
+                        <p class="tx-12 mg-b-0 tx-color-03">To Bitcoin address</p>
+                      </div><!-- media-body -->
+                    </div><!-- media -->
+                    <div class="text-right tx-rubik">
+                      <p class="mg-b-0">-0.0025 BTC</p>
+                      <p class="tx-12 mg-b-0 tx-danger">-$289.00 USD</p>
+                    </div>
+                  </li>
+                  <li class="list-item">
+                    <div class="media align-items-center">
+                      <div class="wd-35 ht-35 bd bd-2 bd-primary tx-primary rounded-circle align-items-center justify-content-center op-6 d-none d-sm-flex">
+                        <i data-feather="upload" class="wd-20 ht-20"></i>
+                      </div>
+                      <div class="media-body mg-sm-l-15">
+                        <p class="tx-medium mg-b-0">Sent Bitcoin</p>
+                        <p class="tx-12 mg-b-0 tx-color-03">To Bitcoin address</p>
+                      </div><!-- media-body -->
+                    </div><!-- media -->
+                    <div class="text-right tx-rubik">
+                      <p class="mg-b-0">-0.0025 BTC</p>
+                      <p class="tx-12 mg-b-0 tx-danger">-$289.00 USD</p>
+                    </div>
+                  </li>
+                </ul>
+              </div><!-- card-body -->
+            </div><!-- card -->
+          </div><!-- col -->
+          
+          
+          
+          
+        </div><!-- row -->
+      </div><!-- container -->
+    </div><!-- content -->
+     <div class="modal fade effect-scale" id="modalInvitePeople" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body pd-20 pd-sm-30">
+            <button type="button" class="close pos-absolute t-20 r-20" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true"><i data-feather="x" class="wd-20"></i></span>
+            </button>
+
+            <h6 class="tx-18 tx-sm-20 mg-b-5">Copy Address</h6>
+            <p class="tx-color-03 mg-b-20">Copy the wallet address to receive tokens/NFT</p>
+            <div class="input-group mg-b-5">
+              <input type="text" class="form-control" value="0x9586fdwjett43eduf4edudhg4" readonly >
+              <div class="input-group-append">
+                <button class="btn btn-outline-light" type="button" id="button-addon2">Copy</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
+    

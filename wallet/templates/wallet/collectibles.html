@@ -1,0 +1,67 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="content content-fixed bd-b">
+      <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+        <div class="d-sm-flex align-items-center justify-content-between">
+          <div>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-style1 mg-b-10">
+                <li class="breadcrumb-item"><a href="#">home</a></li>
+                <li class="breadcrumb-item"><a href="#">staking</a></li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: #fbbd18;">Collectibles</li>
+              </ol>
+            </nav>
+            <h4 class="mg-b-0" style="color: #fbbd18;">All Stakings</h4>
+          </div>
+          <div class="search-form mg-t-20 mg-sm-t-0">
+            <input type="search" class="form-control" placeholder="Search events">
+            <button class="btn" type="button"><i data-feather="search"></i></button>
+          </div>
+        </div>
+      </div><!-- container -->
+    </div><!-- content -->
+
+    <div class="content">
+      <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+        <div class="row">
+          <div class="col-lg-12 col-xl-12">
+
+            <div data-label="Example" class="df-example">
+          <div class="card-deck">
+            <div class="card">
+              <img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F03%2FFirst-NFT-Art-Gallery-Space-Opens-in-New-York-b.jpg?464=&cbr=1&q=90" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title" style="color: #fbbd18;">Title 4568</h5>
+                <p class="card-text">LAll your nft collectibles will appear here, you can send and receive nfts to/from supported wallet</p>
+                <a href="/stake/stake/" class="btn btn-warning">Stake</a> <a href="/wallet/send-1/" class="btn btn-success"><i data-feather="send" class="mg-r-5"></i> Send</a>
+              </div>
+            </div>
+            <div class="card">
+              <img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F03%2FFirst-NFT-Art-Gallery-Space-Opens-in-New-York-b.jpg?464=&cbr=1&q=90" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title" style="color: #fbbd18;">Title 4568</h5>
+                <p class="card-text">LAll your nft collectibles will appear here, you can send and receive nfts to/from supported wallet</p>
+                <a href="/stake/stake/" class="btn btn-warning">Stake</a> <a href="/wallet/send-1/" class="btn btn-success"><i data-feather="send" class="mg-r-5"></i> Send</a>
+              </div>
+            </div>
+            <div class="card">
+              <img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F03%2FFirst-NFT-Art-Gallery-Space-Opens-in-New-York-b.jpg?464=&cbr=1&q=90" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title" style="color: #fbbd18;">Title 4568</h5>
+                <p class="card-text">All your nft collectibles will appear here, you can send and receive nfts to/from supported wallet</p>
+                 <a href="/stake/stake/" class="btn btn-primary">Stake</a>
+                 <a href="/wallet/send-1/" class="btn btn-success"><i data-feather="send" class="mg-r-5"></i> Send</a>
+              </div>
+            </div>
+          </div>
+        </div><!-- df-example -->
+              </div>
+          
+        </div><!-- row -->
+      </div><!-- container -->
+    </div><!-- content -->
+
+{% endblock %}

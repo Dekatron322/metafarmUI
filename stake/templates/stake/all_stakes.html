@@ -1,0 +1,139 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="content content-fixed bd-b">
+      <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+        <div class="d-sm-flex align-items-center justify-content-between">
+          <div>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb breadcrumb-style1 mg-b-10">
+                <li class="breadcrumb-item"><a href="#">Profile</a></li>
+               <li class="breadcrumb-item active" aria-current="page" style="color: #fbbd18;">stake</li>
+                
+              </ol>
+            </nav>
+            <h4 class="mg-b-0" style="color: #fbbd18;">Available Staking</h4>
+          </div>
+          <div class="search-form mg-t-20 mg-sm-t-0">
+            <input type="search" class="form-control" placeholder="Search events">
+            <button class="btn" type="button"><i data-feather="search"></i></button>
+          </div>
+        </div>
+      </div><!-- container -->
+    </div><!-- content -->
+
+    <div class="content">
+      <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+        <div class="row">
+          <div class="col-lg-8 col-xl-9">
+
+            <div class="row row-sm mg-b-25">
+              <div class="col-md-6">
+                <div class="card card-event">
+                  <img src="https://simplecryptoguide.com/wp-content/uploads/2021/12/MetisDAO-500x286-1.jpg" class="card-img-top" alt="">
+                  <div class="card-body tx-13">
+                    <h5><a style="color: #fbbd18;" href="">Metis Staking</a></h5>
+                    <p class="mg-b-0">Stake metis token or nft</p>
+                    <span class="tx-12 tx-color-03">Metis</span>
+                  </div><!-- card-body -->
+                  <div class="card-footer tx-13">
+                    <span class="tx-color-03">6,187 people all staked</span>
+                    <a href="/stake/stake/">
+                    <button class="btn btn-xs btn-warning">Begin Staking</button>
+                    </a>
+                  </div><!-- card-footer -->
+                </div><!-- card -->
+              </div><!-- col -->
+              <div class="col-md-6 mg-t-20 mg-md-t-0">
+                <div class="card card-event">
+                  <img src="https://www.abnewswire.com/uploads/1639364042.jpeg" class="card-img-top" alt="">
+                  <div class="card-body tx-13">
+                    <h5><a style="color: #fbbd18;" href="">MateFarm Staking</a></h5>
+                    <p class="mg-b-0">Stake your meta farm token and nft to earn</p>
+                    <span class="tx-12 tx-color-03">MetaFarm</span>
+                  </div><!-- card-body -->
+                  <div class="card-footer tx-13">
+                    <span class="tx-color-03">5,092 people already staked</span>
+                    <a href="/stake/stake/">
+                    <button class="btn btn-xs btn-warning">Begin Staking</button>
+                    </a>
+                  </div><!-- card-footer -->
+                </div><!-- card -->
+              </div><!-- col -->
+              <div class="col-md-6 mg-t-20">
+                <div class="card card-event">
+                  <img src="https://kriptomat.io/wp-content/uploads/2021/12/article_what-is-staking-1180x500.png" class="card-img-top" alt="">
+                  <div class="card-body tx-13">
+                    <h5><a style="color: #fbbd18;" href="">MateFarm Staking</a></h5>
+                    <p class="mg-b-0">Stake your meta farm token and nft to earn</p>
+                    <span class="tx-12 tx-color-03">MetaFarm</span>
+                  </div><!-- card-body -->
+                  <div class="card-footer tx-13">
+                    <span class="tx-color-03">5,092 people already staked</span>
+                    <a href="/stake/stake/">
+                    <button class="btn btn-xs btn-warning">Begin Staking</button>
+                    </a>
+                  </div><!-- card-footer -->
+                </div><!-- card -->
+              </div><!-- col -->
+              <div class="col-md-6 mg-t-20">
+                <div class="card card-event">
+                  <img src="https://kriptomat.io/wp-content/uploads/2021/12/article_what-is-staking-1180x500.png" class="card-img-top" alt="">
+                  <div class="card-body tx-13">
+                    <h5><a style="color: #fbbd18;" href="">MateFarm Staking</a></h5>
+                    <p class="mg-b-0">Stake your meta farm token and nft to earn</p>
+                    <span class="tx-12 tx-color-03">MetaFarm</span>
+                  </div><!-- card-body -->
+                  <div class="card-footer tx-13">
+                    <span class="tx-color-03">5,092 people already staked</span>
+                    <a href="/stake/stake/">
+                    <button class="btn btn-xs btn-warning">Begin Staking</button>
+                    </a>
+                  </div><!-- card-footer -->
+                </div><!-- card -->
+              </div><!-- col -->
+              
+            </div><!-- row -->
+
+          </div><!-- col -->
+          <div class="col-sm-7 col-md-5 col-lg-4 col-xl-3 mg-t-40 mg-lg-t-0">
+            <div class="d-flex align-items-center justify-content-between mg-b-20">
+              <h6 class="tx-uppercase tx-semibold mg-b-0">Upcoming Staking</h6>
+            </div>
+            <ul class="list-unstyled media-list mg-b-15">
+              <li class="media align-items-center">
+                <div class="wd-40 ht-40 bg-dark tx-white d-flex align-items-center justify-content-center rounded">
+                  <i data-feather="calendar"></i>
+                </div>
+                <div class="media-body pd-l-15">
+                  <h6 class="mg-b-2"><a href="" class="link-01">xxxx staking</a></h6>
+                  <span class="tx-13 tx-color-03">April 21, 5:00pm</span>
+                </div>
+              </li>
+              <li class="media align-items-center mg-t-15">
+                <div class="wd-40 ht-40 bg-indigo tx-white d-flex align-items-center justify-content-center rounded">
+                  <i data-feather="calendar"></i>
+                </div>
+                <div class="media-body pd-l-15">
+                  <h6 class="mg-b-2"><a href="" class="link-01">ereire staking</a></h6>
+                  <span class="tx-13 tx-color-03">April 22, 3:00pm</span>
+                </div>
+              </li>
+            </ul>
+
+            <h6 class="tx-uppercase tx-semibold mg-t-50 mg-b-15">Some Statistics</h6>
+
+            <nav class="nav nav-classic tx-13">
+              <a href="" class="nav-link"><span>Verified Stakes</span> <span class="badge">200</span></a>
+              <a href="" class="nav-link"><span>Total Stakes</span> <span class="badge">18,ooo</span></a>
+              <a href="" class="nav-link"><span>Pending Stakes</span> <span class="badge">14</span></a>
+              
+            </nav>
+          </div><!-- col -->
+        </div><!-- row -->
+      </div><!-- container -->
+    </div><!-- content -->
+
+{% endblock %}

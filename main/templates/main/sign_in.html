@@ -1,0 +1,62 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="content content-fixed content-auth">
+      <div class="container">
+        <div class="media align-items-stretch justify-content-center ht-100p pos-relative">
+          <div class="media-body align-items-center d-none d-lg-flex">
+            <div class="mx-wd-600">
+              <img src="https://library.kissclipart.com/20180830/wgq/kissclipart-background-farm-clipart-farm-agriculture-clip-art-f8d9e77784373415.png" class="img-fluid" alt="">
+            </div>
+            
+          </div><!-- media-body -->
+          <div class="sign-wrapper mg-lg-l-50 mg-xl-l-60">
+            <div class="wd-100p">
+              <h3 class="tx-color-01 mg-b-5">Sign In</h3>
+              <p class="tx-color-03 tx-16 mg-b-40">Welcome back! Please signin to continue.</p>
+
+              
+              <div class="form-group">
+                <div class="d-flex justify-content-between mg-b-5">
+                  <label class="mg-b-0-f">Password</label>
+                  <a href="" class="tx-13" style="color: #fbbd18">Forgot password?</a>
+                </div>
+                <input type="password" class="form-control" placeholder="Enter your password">
+              </div>
+              <a href="#modal6" data-toggle="modal" data-animation="effect-fall" class="btn btn-brand-02 btn-block">Sign In</a>
+              <div class="divider-text">or</div>
+              <button class="btn btn-outline-warning btn-block">Connect Wallet</button>
+              
+              <div class="tx-13 mg-t-20 tx-center">Don't have an account? <a href="/" style="color: #fbbd18">Create an Account</a></div>
+            </div>
+          </div><!-- sign-wrapper -->
+        </div><!-- media -->
+      </div><!-- container -->
+    </div><!-- content -->
+    <br><br><br><br>
+
+    <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel6" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content tx-14">
+          <div class="modal-header">
+            <h6 class="modal-title" id="exampleModalLabel6">Notification</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="mg-b-0" style="color: #ffffff;">This is to notify the general public that this is just a preview of our proposed project and no user information are stored in any way.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
+            <a href="/index/" type="button" class="btn btn-primary tx-13">Proceed to preview</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}

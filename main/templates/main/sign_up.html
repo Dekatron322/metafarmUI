@@ -1,0 +1,67 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="content content-fixed content-auth">
+      <div class="container">
+        <div class="media align-items-stretch justify-content-center ht-100p">
+          <div class="sign-wrapper mg-lg-r-50 mg-xl-r-60">
+            <div class="pd-t-20 wd-100p">
+              <h4 class="tx-color-01 mg-b-5">Create New Account</h4>
+              
+              
+              <div class="form-group">
+                <div class="d-flex justify-content-between mg-b-5">
+                  <label class="mg-b-0-f">Password</label>
+                </div>
+                <input type="password" class="form-control" placeholder="Enter your Password">
+              </div>
+              <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control" placeholder="Retype Password">
+              </div>
+              
+              <div class="form-group tx-12">
+                By clicking <strong>Create an account</strong> below, you agree to our <a href="" style="color: #fbbd18">terms of service</a> and <a href="" style="color: #fbbd18">privacy policy.</a>
+              </div><!-- form-group -->
+
+              <a href="#modal6" data-toggle="modal" data-animation="effect-fall" class="btn btn-brand-02 btn-block">Create Account</a>
+              <div class="divider-text">or</div>
+              
+              <button class="btn btn-outline-warning btn-block">Authenticate With Metamask</button>
+              <div class="tx-13 mg-t-20 tx-center">Already have an account? <a href="/sign-in/" style="color: #fbbd18">Sign In</a></div>
+            </div>
+          </div><!-- sign-wrapper -->
+          <div class="media-body pd-y-30 pd-lg-x-50 pd-xl-x-60 align-items-center d-none d-lg-flex pos-relative">
+            <div class="mx-lg-wd-500 mx-xl-wd-550">
+              <img src="https://cdn.pixabay.com/photo/2020/04/03/06/56/farm-background-4997626_1280.jpg" class="img-fluid" alt="">
+            </div>
+            
+          </div><!-- media-body -->
+        </div><!-- media -->
+      </div><!-- container -->
+    </div><!-- content -->
+
+    <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel6" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content tx-14">
+          <div class="modal-header">
+            <h6 class="modal-title" id="exampleModalLabel6">Notification</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="mg-b-0" style="color: #ffffff;">This is to notify the general public that this is just a preview of our proposed project and no user information are stored in any way.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary tx-13" data-dismiss="modal">Close</button>
+            <a href="/index/" type="button" class="btn btn-primary tx-13">Proceed to preview</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
